@@ -2,11 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+class Game
+  constructor: (@song) ->
+
+  start: () ->
+    @song.play()
+
 $play_button = null
 $game_pane = null
 $landing_pane = null
 
 $ ->
+  as = audiojs.createAll();
+  game = new Game(as[0])
+
   $play = $ "#play_button"
   $game_pane = $ "#game_pane"
   $landing_pane = $ "#landing_pane"
@@ -15,3 +24,5 @@ $ ->
     $game_pane.toggleClass "onscreen"
     $landing_pane.toggleClass "onscreen"
     $landing_pane.addClass "left"
+
+    game.start()
