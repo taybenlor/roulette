@@ -39,7 +39,9 @@ body {
 
 
 #conveyor {
+  position: relative;
   margin-bottom: 40px;
+  z-index: 1000;
 }
 
   #conveyor li {
@@ -116,8 +118,8 @@ body {
       opacity: 0 !important;
       background: url(<%= asset_path "heart-fail.png"%>);
       background-repeat: no-repeat;
-      width: 75px;
-      height: 65px;
+      width: 83px;
+      height: 66px;
     
     }
 
@@ -291,3 +293,7 @@ body {
     font-weight: bold;
     color: #ee1b2e;
   }
+
+#landing_pane{
+  padding: 0;
+}
