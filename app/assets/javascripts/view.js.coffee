@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 BPMS = (60/104) * 1000
+HEART_POS = 200
+FUDGE = 30
 
 class Game
   constructor: (@song, @pane) ->
@@ -10,6 +12,7 @@ class Game
     @heart.click @press
     @startTime = null
     @lastbeat = 0
+    @interaction = @pane.find("#interaction")
 
   start: () ->
     @startTime = (new Date()).getTime()
@@ -21,15 +24,39 @@ class Game
     
 
   press: () =>
+    $current_heart = $(".heart-overlay:not(.miss, .hit)").last()
+    current_top = $current_heart.addClass("hit")
+    @hit()
 
+  miss: () =>
+
+  hit: () =>    
+
+  addHeart: () =>
+    heart = $ "<div class=\"heart-overlay\"></div>"
+    @interaction.prepend heart
+
+    heart.animate({
+      opacity: 1,
+      top: "+=900"
+    },{
+      duration: 4000,
+      complete: =>
+        heart.remove()
+    })
 
   anim: () =>
     current = (new Date()).getTime()
     if (current - @lastbeat) > BPMS
       @lastbeat += BPMS
-      @heart.addClass "press"
-      setTimeout((=> @heart.removeClass "press"), 20)
-
+      @addHeart()
+      $(".heart-overlay").each (i, el) =>
+        $el = $(el)
+        return if $el.hasClass("hit")
+        
+        if $el.position().top > (HEART_POS + FUDGE)
+          $el.addClass("miss")
+          @miss()
   
 $play_button = null
 $game_pane = null
