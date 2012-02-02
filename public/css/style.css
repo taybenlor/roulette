@@ -4,6 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Tungsten';
+    src: url('../type/Tungsten-Semibold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
   -webkit-box-sizing: border-box;
@@ -29,9 +35,25 @@ body {
 #interaction {
   position: relative;
   width: 100%;
-  height: 500px;
-  background-color: rgba(0,0,0,.02);
+  height: 800px;
+  background-color: #ecd8a2;
+  background-image: url(../img/man.png);
+  background-position: -140px 0;
+  -webkit-transition: background-color .5s linear;
 } 
+
+  #interaction.dying-1 {
+    background-color: #f2e7c1;
+  }
+  #interaction.dying-2 {
+    background-color: #dedede;
+  }
+  #interaction.dying-3 {
+    background-color: #cedbe6;
+  }
+  #interaction.dying-4 {
+    background-color: #9cb4c6;
+  }
 
   #heart {
     position: absolute;
@@ -39,10 +61,21 @@ body {
     height: 120px;
     background: url(../img/heart.png) no-repeat;
     cursor: pointer;
+    top: 200px;
+    left: 80px;
   }
   
   #heart:active {
     background-position: 0 -110px;
+  }
+  
+  #heart-overlay {
+    position: absolute;
+    left: 107px;
+    background-color: pink;
+    width: 75px;
+    height: 65px;
+    background: url(../img/heart-overlay.png);
   }
   
   time {
@@ -79,6 +112,37 @@ body {
       height: 100%;
       background: url(../img/countdown-shine.png);
     }
+    
+  #encourage {
+    position: absolute;
+    width: 175px;
+    text-align: center;
+    font-family: Tungsten;
+    color: #d9863c;
+    font-size: 52px;
+    line-height: .8;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    right: -20px;
+    top: 140px;
+    -webkit-transform: rotateZ(-3deg);
+    -webkit-animation-name: entrance;
+    -webkit-animation-duration: .9s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+  }
+  
+      @-webkit-keyframes entrance {
+        from {
+          -webkit-transform: scale(2.0) rotateZ(0deg);
+          opacity: 0;
+              
+        }
+        to {
+          -webkit-transform: scale(1.0) rotateZ(-3deg);
+          opacity: 1;
+        }
+      }
 
 
 
