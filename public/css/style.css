@@ -4,6 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Tungsten';
+    src: url('../type/Tungsten-Semibold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
   -webkit-box-sizing: border-box;
@@ -79,6 +85,21 @@ body {
       height: 100%;
       background: url(../img/countdown-shine.png);
     }
+    
+  #encourage {
+    position: absolute;
+    width: 175px;
+    text-align: center;
+    font-family: Tungsten;
+    color: #d9863c;
+    font-size: 52px;
+    line-height: .8;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    right: -20px;
+    top: 140px;
+    -webkit-transform: rotateZ(-3deg);
+  }
 
 
 
