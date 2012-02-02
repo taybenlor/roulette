@@ -1,3 +1,47 @@
 // Place all the styles related to the view controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+html{
+  background: #282828;
+}
+
+body{
+  position: relative;
+  margin: auto;
+  width: 520px;
+  background: white;
+  height: 800px;
+
+  overflow: hidden;
+}
+
+.pane{
+  position: absolute;
+  width: 520px;
+  height: 800px;
+  top: 0px;
+  left: 520px;
+  -webkit-transition: left 0.3s ease;
+
+  &.onscreen{
+    left: 0px;
+  }
+
+  &.left{
+    left: -520px;
+  }
+}
+
+#landing_pane{
+  background: #4DC3FF;
+}
+
+#game_pane{
+  background: #7C56FF;
+}
+
+  

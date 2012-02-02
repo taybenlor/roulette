@@ -1,8 +1,10 @@
 class ViewController < ApplicationController
+  helper_method :liked?
+
 	before_filter :get_facebook_data
-  
+
   def show
-    
+    logger.info @fbdata.to_s    
 	end
 
   private
@@ -12,15 +14,19 @@ class ViewController < ApplicationController
   end
   
   def get_facebook_data
-    if params[:fake]
+    return @fbdata if @fbdata
+    if params[:signed_request]
+      @fbdata = JSON.parse(base64_url_decode(params[:signed_request].split('.')[1]))
+    else
       @fbdata = {
         "page" => {
-          "liked" => (params[:liked] == "true")
+          "liked" => true
         }
       }
-    else
-      @fbdata = JSON.parse(base64_url_decode(params[:signed_request].split('.')[1]))
     end
-    @liked = @fbdata["page"]["liked"]
+  end
+
+  def liked?
+    get_facebook_data["page"]["liked"]
   end
 end
