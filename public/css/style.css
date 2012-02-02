@@ -1,0 +1,40 @@
+
+body {
+  background-color: #faf6eb;
+  width: 510px;
+  padding: 50px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+#conveyor {
+  background-color: pink;
+  margin-bottom: 40px;
+}
+
+  #conveyor li {
+    display: inline-block;
+  }
+
+#interaction {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: rgba(0,0,0,.02);
+} 
+
+  #heart {
+    position: absolute;
+    width: 125px;
+    height: 120px;
+    background: url(../img/heart.png) no-repeat;
+    cursor: pointer;
+  }
+  
+  #heart:active {
+    background-position: 0 -110px;
+  }
+
+
+
+
