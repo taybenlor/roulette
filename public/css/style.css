@@ -51,6 +51,9 @@ body {
   #interaction.dying-3 {
     background-color: #cedbe6;
   }
+  #interaction.dying-4 {
+    background-color: #9cb4c6;
+  }
 
   #heart {
     position: absolute;
