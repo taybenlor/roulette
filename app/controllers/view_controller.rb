@@ -4,7 +4,7 @@ class ViewController < ApplicationController
 	before_filter :get_facebook_data
 
   def show
-    logger.info @fbdata.to_s    
+    logger.info @fbdata.to_s
 	end
 
   private

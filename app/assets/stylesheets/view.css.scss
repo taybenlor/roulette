@@ -31,6 +31,7 @@ body{
   left: 520px;
   -webkit-transition: left 0.3s ease;
   background-color: #faf6eb;
+  padding: 50px;
 
   &.onscreen{
     left: 0px;
@@ -42,11 +43,9 @@ body{
 }
 
 #landing_pane{
-  background: #4DC3FF;
 }
 
 #game_pane{
-  background: #7C56FF;
 }
 
 .audiojs{
@@ -73,13 +72,13 @@ body{
     position: absolute;
     width: 125px;
     height: 120px;
-    background: url(../img/heart.png) no-repeat;
+    background: url(/assets/heart.png) no-repeat;
     cursor: pointer;
 
     border: none;  
   }
   
-  #heart:active {
+  #heart:active, #heart.press{
     background-position: 0 -110px;
   }
 
