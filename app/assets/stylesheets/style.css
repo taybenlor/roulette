@@ -156,7 +156,6 @@ body {
   -webkit-animation-duration: .3s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
-      display: block !important;
 }
 
     @-webkit-keyframes fade-in {
