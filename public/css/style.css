@@ -112,7 +112,23 @@ body {
     right: -20px;
     top: 140px;
     -webkit-transform: rotateZ(-3deg);
+    -webkit-animation-name: entrance;
+    -webkit-animation-duration: .9s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
   }
+  
+      @-webkit-keyframes entrance {
+        from {
+          -webkit-transform: scale(2.0) rotateZ(0deg);
+          opacity: 0;
+              
+        }
+        to {
+          -webkit-transform: scale(1.0) rotateZ(-3deg);
+          opacity: 1;
+        }
+      }
 
 
 
