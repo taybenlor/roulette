@@ -4,7 +4,7 @@
 
 BPMS = (60/104) * 1000
 HEART_POS = 200
-FUDGE = 30
+FUDGE = 50
 
 class Game
   constructor: (@song, @pane) ->
@@ -25,8 +25,13 @@ class Game
 
   press: () =>
     $current_heart = $(".heart-overlay:not(.miss, .hit)").last()
-    current_top = $current_heart.addClass("hit")
-    @hit()
+    current_top = $current_heart.position().top
+    if (current_top < HEART_POS + FUDGE) and (current_top > HEART_POS - FUDGE)
+      $current_heart.addClass("hit")
+      @hit()
+    else
+      $current_heart.addClass("miss")
+    
 
   miss: () =>
 
