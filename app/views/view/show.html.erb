@@ -8,17 +8,22 @@
 </div>
 
 <div id="game_pane" class="pane offscreen">
-  <audio id="track" src="<%= asset_path 'alive.mp3' %>" preload="auto" />
-
   <nav id="conveyor">
   
-    <img src="images/conveyor-eg.png" />
+    <%= image_tag "conveyor-eg.png" %>
   
   </nav>
       
   <section id="interaction">
   
     <button id="heart"></button>
-  
+    
+    <time>2:00</time>
+    
+    <div id="encourage">We're losin' him Jimmy!</div>
   </section>
+
+  <div>
+    <audio id="track" src="<%= asset_path 'alive.mp3' %>" preload="auto" />
+  </div>
 </div>
