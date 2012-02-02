@@ -39,7 +39,18 @@ body {
   background-color: #ecd8a2;
   background-image: url(../img/man.png);
   background-position: -140px 0;
+  -webkit-transition: background-color .5s linear;
 } 
+
+  #interaction.dying-1 {
+    background-color: #f2e7c1;
+  }
+  #interaction.dying-2 {
+    background-color: #dedede;
+  }
+  #interaction.dying-3 {
+    background-color: #cedbe6;
+  }
 
   #heart {
     position: absolute;
